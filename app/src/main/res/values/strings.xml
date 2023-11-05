@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">LaTorre</string>
+    <string name="title_1">Title</string>
+    <string name="location_1">Address</string>
+    <string name="details_1">Details</string>
+    <string name="author_1">Author 1</string>
 </resources>
