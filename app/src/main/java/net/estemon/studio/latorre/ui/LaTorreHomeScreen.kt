@@ -74,7 +74,7 @@ private fun LaTorreAppContent(
         Row(modifier = Modifier.fillMaxSize()) {
             AnimatedVisibility(visible = navigationType == LaTorreNavigationType.NAVIGATION_RAIL) {
                 val navigationRailContentDescription = stringResource(R.string.navigation_rail)
-                LaTorreNavigationRail(
+                AppNavigationRail(
                     currentCategory = laTorreUiState.currentCategory,
                     onTabPressed = onTabPressed,
                     navigationItemContentList = navigationItemContentList,
