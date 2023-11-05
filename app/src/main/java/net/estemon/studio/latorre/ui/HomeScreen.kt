@@ -6,11 +6,13 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import net.estemon.studio.latorre.R
 import net.estemon.studio.latorre.data.PlaceCategory
@@ -20,19 +22,19 @@ import net.estemon.studio.latorre.data.iconNature
 import net.estemon.studio.latorre.data.iconRestaurant
 import net.estemon.studio.latorre.data.iconShopping
 import net.estemon.studio.latorre.model.Place
-import net.estemon.studio.latorre.ui.utils.LaTorreContentType
-import net.estemon.studio.latorre.ui.utils.LaTorreNavigationType
+import net.estemon.studio.latorre.ui.utils.AppContentType
+import net.estemon.studio.latorre.ui.utils.AppNavigationType
 
 @Composable
 fun LaTorreHomeScreen(
-    navigationType: LaTorreNavigationType,
-    contentType: LaTorreContentType,
+    navigationType: AppNavigationType,
+    contentType: AppContentType,
     appUiState: AppUiState,
     onTabPressed: (PlaceCategory) -> Unit,
     onPlaceCardPressed: (Place) -> Unit,
     onDetailScreenBackPressed: () -> Unit,
     modifier: Modifier = Modifier
-    ) {
+) {
     val navigationItemContentList = listOf(
         NavigationItemContent(
             category = PlaceCategory.Nature,
@@ -60,13 +62,13 @@ fun LaTorreHomeScreen(
             text = stringResource(R.string.nav_family)
         ),
 
-    )
+        )
 }
 
 @Composable
 private fun LaTorreAppContent(
-    navigationType: LaTorreNavigationType,
-    contentType: LaTorreContentType,
+    navigationType: AppNavigationType,
+    contentType: AppContentType,
     appUiState: AppUiState,
     onTabPressed: (PlaceCategory) -> Unit,
     onPlaceCardPressed: (Place) -> Unit,
@@ -75,7 +77,7 @@ private fun LaTorreAppContent(
 ) {
     Box(modifier = modifier) {
         Row(modifier = Modifier.fillMaxSize()) {
-            AnimatedVisibility(visible = navigationType == LaTorreNavigationType.NAVIGATION_RAIL) {
+            AnimatedVisibility(visible = navigationType == AppNavigationType.NAVIGATION_RAIL) {
                 val navigationRailContentDescription = stringResource(R.string.navigation_rail)
                 AppNavigationRail(
                     currentCategory = appUiState.currentCategory,
@@ -90,12 +92,30 @@ private fun LaTorreAppContent(
                     .fillMaxSize()
                     .background(MaterialTheme.colorScheme.inverseOnSurface)
             ) {
-                if (contentType == LaTorreContentType.LIST_AND_DETAIL_HORIZONTAL) {
-
-                } else if (contentType == LaTorreContentType.LIST_AND_DETAIL_VERTICAL) {
-
+                if (contentType == AppContentType.LIST_AND_DETAIL_HORIZONTAL) {
+                    AppListAndDetailHorizontalContent(
+                        appUiState = appUiState,
+                        onPlaceCardPressed = onPlaceCardPressed,
+                        modifier = Modifier
+                            .weight(1f)
+                    )
+                } else if (contentType == AppContentType.LIST_AND_DETAIL_VERTICAL) {
+                    AppListAndDetailVerticalContent(
+                        appUiState = appUiState,
+                        onPlaceCardPressed = onPlaceCardPressed,
+                        modifier = Modifier
+                            .weight(1f)
+                    )
                 } else {
-
+                    AppListOnlyContent(
+                        appUiState = appUiState,
+                        onPlaceCardPressed = onPlaceCardPressed,
+                        modifier = Modifier
+                            .weight(1f)
+                            .padding(
+                                horizontal = dimensionResource(R.dimen.place_list_only_horizontal_padding)
+                            )
+                    )
                 }
             }
         }

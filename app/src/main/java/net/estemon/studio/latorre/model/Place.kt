@@ -6,7 +6,7 @@ import net.estemon.studio.latorre.R
 import net.estemon.studio.latorre.data.PlaceCategory
 
 data class Place(
-    val id: Int,
+    val id: Long,
     @StringRes val titleResourceId: Int,
     @StringRes val locationResourceId: Int,
     @StringRes val createdByResourceId: Int = R.string.author_1,
