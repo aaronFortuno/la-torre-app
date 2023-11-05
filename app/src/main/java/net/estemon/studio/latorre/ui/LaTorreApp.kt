@@ -5,6 +5,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
+import net.estemon.studio.latorre.data.PlaceCategory
+import net.estemon.studio.latorre.model.Place
 import net.estemon.studio.latorre.ui.utils.LaTorreContentType
 import net.estemon.studio.latorre.ui.utils.LaTorreNavigationType
 
@@ -37,6 +39,22 @@ fun LaTorreApp(
         }
     }
 
-    /*LaTorreHomeScreen(
-    )*/
+    LaTorreHomeScreen(
+        navigationType = navigationType,
+        contentType = contentType,
+        laTorreUiState = laTorreUiState,
+        onTabPressed = { placeCategory: PlaceCategory ->
+            viewModel.updateCurrentCategory(category = placeCategory)
+            viewModel.resetHomeScreenStates()
+        },
+        onPlaceCardPressed = { place: Place ->
+            viewModel.updateDetailsScreenStates(
+                place = place
+            )
+        },
+        onDetailScreenBackPressed = {
+            viewModel.resetHomeScreenStates()
+        },
+        modifier = modifier
+    )
 }

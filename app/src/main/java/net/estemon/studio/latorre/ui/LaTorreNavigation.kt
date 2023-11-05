@@ -6,6 +6,7 @@ import androidx.compose.material3.NavigationRailItem
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import net.estemon.studio.latorre.data.PlaceCategory
+import net.estemon.studio.latorre.data.iconBookmarked
 
 @Composable
 fun LaTorreNavigationRail(
@@ -13,7 +14,7 @@ fun LaTorreNavigationRail(
     onTabPressed: (PlaceCategory) -> Unit,
     navigationItemContentList: List<NavigationItemContent>,
     modifier: Modifier = Modifier
-    ) {
+) {
     NavigationRail(modifier = modifier) {
         for (navItem in navigationItemContentList) {
             NavigationRailItem(
@@ -27,5 +28,10 @@ fun LaTorreNavigationRail(
                 }
             )
         }
+        NavigationRailItem(
+            selected = false,
+            onClick = { /*TODO*/ },
+            icon = { iconBookmarked }
+        )
     }
 }

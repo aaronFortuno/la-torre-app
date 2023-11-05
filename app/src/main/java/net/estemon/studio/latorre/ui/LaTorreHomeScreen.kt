@@ -55,7 +55,8 @@ fun LaTorreHomeScreen(
             category = PlaceCategory.Family,
             icon = iconFamily,
             text = stringResource(R.string.nav_family)
-        )
+        ),
+
     )
 }
 
@@ -84,8 +85,6 @@ private fun LaTorreAppContent(
         }
     }
 }
-
-
 
 
 // TODO check if it have to been private
