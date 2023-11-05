@@ -6,8 +6,8 @@ import net.estemon.studio.latorre.model.Place
 
 data class LaTorreUiState(
     val categories: Map<PlaceCategory, List<Place>> = emptyMap(),
-    val currentCategory: PlaceCategory = PlaceCategory.Cultural,
-    val currentSelectedPlace: Place = LocalLaTorreDataProvider.defaultItem,
+    val currentCategory: PlaceCategory = PlaceCategory.Culture,
+    val currentSelectedPlace: Place = LocalLaTorreDataProvider.defaultPlace,
     val isShowingHomepage: Boolean = true
 ) {
     val currentCategoryPlaces: List<Place> by lazy {

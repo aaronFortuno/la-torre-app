@@ -2,7 +2,6 @@ package net.estemon.studio.latorre.data.local
 
 import net.estemon.studio.latorre.R
 import net.estemon.studio.latorre.data.PlaceCategory
-import net.estemon.studio.latorre.data.local.LocalLaTorreDataProvider.allPlaces
 import net.estemon.studio.latorre.model.Place
 
 object LocalLaTorreDataProvider {
@@ -57,7 +56,7 @@ object LocalLaTorreDataProvider {
             imageResourceId = R.drawable.ic_launcher_background,
             placeImageBanner = R.drawable.ic_launcher_background,
             detailsResourceId = R.string.details_1,
-            category = PlaceCategory.Natural
+            category = PlaceCategory.Nature
         ),
         Place(
             id = 6,
@@ -68,7 +67,7 @@ object LocalLaTorreDataProvider {
             imageResourceId = R.drawable.ic_launcher_background,
             placeImageBanner = R.drawable.ic_launcher_background,
             detailsResourceId = R.string.details_1,
-            category = PlaceCategory.Natural
+            category = PlaceCategory.Nature
         ),
         Place(
             id = 7,
@@ -112,7 +111,7 @@ object LocalLaTorreDataProvider {
             imageResourceId = R.drawable.ic_launcher_background,
             placeImageBanner = R.drawable.ic_launcher_background,
             detailsResourceId = R.string.details_1,
-            category = PlaceCategory.Children
+            category = PlaceCategory.Family
         ),
         Place(
             id = 11,
@@ -123,7 +122,7 @@ object LocalLaTorreDataProvider {
             imageResourceId = R.drawable.ic_launcher_background,
             placeImageBanner = R.drawable.ic_launcher_background,
             detailsResourceId = R.string.details_1,
-            category = PlaceCategory.Cultural
+            category = PlaceCategory.Culture
         ),
         Place(
             id = 12,
@@ -134,7 +133,7 @@ object LocalLaTorreDataProvider {
             imageResourceId = R.drawable.ic_launcher_background,
             placeImageBanner = R.drawable.ic_launcher_background,
             detailsResourceId = R.string.details_1,
-            category = PlaceCategory.Children
+            category = PlaceCategory.Family
         ),
         Place(
             id = 13,
@@ -145,7 +144,7 @@ object LocalLaTorreDataProvider {
             imageResourceId = R.drawable.ic_launcher_background,
             placeImageBanner = R.drawable.ic_launcher_background,
             detailsResourceId = R.string.details_1,
-            category = PlaceCategory.Cultural
+            category = PlaceCategory.Culture
         )
     )
     fun get(id: Long): Place? {

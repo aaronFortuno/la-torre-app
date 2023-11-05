@@ -15,5 +15,5 @@ data class Place(
     @DrawableRes val imageResourceId: Int,
     @DrawableRes val placeImageBanner: Int,
     @StringRes val detailsResourceId: Int,
-    val category: PlaceCategory = PlaceCategory.Cultural
+    val category: PlaceCategory = PlaceCategory.Culture
 )

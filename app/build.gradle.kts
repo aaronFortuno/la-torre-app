@@ -59,10 +59,12 @@ dependencies {
     implementation(platform("androidx.compose:compose-bom:2023.10.01"))
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-graphics")
+    implementation("androidx.compose.ui:ui-tooling:1.5.4")
     implementation("androidx.compose.ui:ui-tooling-preview")
 
     implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.material3:material3-window-size-class-android:1.2.0-alpha10")
+    implementation("androidx.compose.material:material-icons-extended:1.5.4")
 
     /*   // for testing purposes only
     testImplementation("junit:junit:4.13.2")

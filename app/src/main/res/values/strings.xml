@@ -1,5 +1,19 @@
 <resources>
     <string name="app_name">LaTorre</string>
+
+    <string name="navigation_drawer">Navigation Drawer</string>
+    <string name="navigation_rail">Navigation Rail</string>
+    <string name="navigation_bottom">Navigation Bottom</string>
+    <string name="navigation_back">Back</string>
+    <string name="details_screen">Details Screen</string>
+
+    <string name="nav_nature">Nature</string>
+    <string name="nav_culture">Culture</string>
+    <string name="nav_restaurant">Eat and drinking</string>
+    <string name="nav_shopping">Shopping</string>
+    <string name="nav_family">Child friendly</string>
+    <string name="nav_bookmarked">Bookmarked</string>
+
     <string name="title_1">Title</string>
     <string name="location_1">Address</string>
     <string name="details_1">Details</string>

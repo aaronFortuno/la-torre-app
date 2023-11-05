@@ -24,7 +24,7 @@ class LaTorreViewModel : ViewModel() {
         _uiState.value =
             LaTorreUiState(
                 categories = categories,
-                currentSelectedPlace = categories[PlaceCategory.Cultural]?.get(0)
+                currentSelectedPlace = categories[PlaceCategory.Culture]?.get(0)
                     ?: LocalLaTorreDataProvider.defaultPlace
             )
     }
