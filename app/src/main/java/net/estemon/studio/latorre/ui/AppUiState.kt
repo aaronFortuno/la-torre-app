@@ -4,7 +4,7 @@ import net.estemon.studio.latorre.data.PlaceCategory
 import net.estemon.studio.latorre.data.local.LocalLaTorreDataProvider
 import net.estemon.studio.latorre.model.Place
 
-data class LaTorreUiState(
+data class AppUiState(
     val categories: Map<PlaceCategory, List<Place>> = emptyMap(),
     val currentCategory: PlaceCategory = PlaceCategory.Culture,
     val currentSelectedPlace: Place = LocalLaTorreDataProvider.defaultPlace,

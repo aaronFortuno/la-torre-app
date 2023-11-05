@@ -8,11 +8,11 @@ import net.estemon.studio.latorre.data.PlaceCategory
 import net.estemon.studio.latorre.data.local.LocalLaTorreDataProvider
 import net.estemon.studio.latorre.model.Place
 
-class LaTorreViewModel : ViewModel() {
+class AppViewModel : ViewModel() {
 
     // backup private val
-    private val _uiState = MutableStateFlow(LaTorreUiState())
-    val uiState: StateFlow<LaTorreUiState> = _uiState
+    private val _uiState = MutableStateFlow(AppUiState())
+    val uiState: StateFlow<AppUiState> = _uiState
 
     init {
         initializeUIState()
@@ -22,7 +22,7 @@ class LaTorreViewModel : ViewModel() {
         val categories: Map<PlaceCategory, List<Place>> =
             LocalLaTorreDataProvider.allPlaces.groupBy { it.category }
         _uiState.value =
-            LaTorreUiState(
+            AppUiState(
                 categories = categories,
                 currentSelectedPlace = categories[PlaceCategory.Culture]?.get(0)
                     ?: LocalLaTorreDataProvider.defaultPlace

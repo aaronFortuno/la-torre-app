@@ -1,9 +1,12 @@
 package net.estemon.studio.latorre.ui
 
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -24,7 +27,7 @@ import net.estemon.studio.latorre.ui.utils.LaTorreNavigationType
 fun LaTorreHomeScreen(
     navigationType: LaTorreNavigationType,
     contentType: LaTorreContentType,
-    laTorreUiState: LaTorreUiState,
+    appUiState: AppUiState,
     onTabPressed: (PlaceCategory) -> Unit,
     onPlaceCardPressed: (Place) -> Unit,
     onDetailScreenBackPressed: () -> Unit,
@@ -64,7 +67,7 @@ fun LaTorreHomeScreen(
 private fun LaTorreAppContent(
     navigationType: LaTorreNavigationType,
     contentType: LaTorreContentType,
-    laTorreUiState: LaTorreUiState,
+    appUiState: AppUiState,
     onTabPressed: (PlaceCategory) -> Unit,
     onPlaceCardPressed: (Place) -> Unit,
     navigationItemContentList: List<NavigationItemContent>,
@@ -75,12 +78,25 @@ private fun LaTorreAppContent(
             AnimatedVisibility(visible = navigationType == LaTorreNavigationType.NAVIGATION_RAIL) {
                 val navigationRailContentDescription = stringResource(R.string.navigation_rail)
                 AppNavigationRail(
-                    currentCategory = laTorreUiState.currentCategory,
+                    currentCategory = appUiState.currentCategory,
                     onTabPressed = onTabPressed,
                     navigationItemContentList = navigationItemContentList,
                     modifier = Modifier
                         .testTag(navigationRailContentDescription)
                 )
+            }
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(MaterialTheme.colorScheme.inverseOnSurface)
+            ) {
+                if (contentType == LaTorreContentType.LIST_AND_DETAIL_HORIZONTAL) {
+
+                } else if (contentType == LaTorreContentType.LIST_AND_DETAIL_VERTICAL) {
+
+                } else {
+
+                }
             }
         }
     }

@@ -16,7 +16,7 @@ fun LaTorreApp(
     modifier: Modifier = Modifier,
 ) {
     val navigationType: LaTorreNavigationType
-    val viewModel: LaTorreViewModel = viewModel()
+    val viewModel: AppViewModel = viewModel()
     val laTorreUiState = viewModel.uiState.collectAsState().value
     val contentType: LaTorreContentType
 
@@ -42,7 +42,7 @@ fun LaTorreApp(
     LaTorreHomeScreen(
         navigationType = navigationType,
         contentType = contentType,
-        laTorreUiState = laTorreUiState,
+        appUiState = laTorreUiState,
         onTabPressed = { placeCategory: PlaceCategory ->
             viewModel.updateCurrentCategory(category = placeCategory)
             viewModel.resetHomeScreenStates()
